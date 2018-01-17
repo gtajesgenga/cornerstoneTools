@@ -27,6 +27,7 @@ export { default as getLuminance } from './util/getLuminance.js';
 export { default as drawTextBox } from './util/drawTextBox.js';
 export { default as drawEllipse } from './util/drawEllipse.js';
 export { default as drawCircle } from './util/drawCircle.js';
+export { default as drawCircleFill } from './util/drawCircleFill.js';
 export { default as drawArrow } from './util/drawArrow.js';
 export { default as copyPoints } from './util/copyPoints.js';
 export { default as calculateSUV } from './util/calculateSUV.js';

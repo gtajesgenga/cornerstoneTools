@@ -1,6 +1,6 @@
 {
-  "name": "cornerstone-tools",
-  "version": "2.0.0",
+  "name": "cgtajesgenga-ornerstone-tools",
+  "version": "2.0.1",
   "description": "Medical imaging tools for the Cornerstone library",
   "main": "./dist/cornerstoneTools.min.js",
   "keywords": [
@@ -8,13 +8,13 @@
     "medical",
     "imaging"
   ],
-  "author": "Chris Hafey, Prasath",
-  "homepage": "https://github.com/cornerstonejs/cornerstoneTools",
+  "author": "Gustavo Tajes Genga",
+  "homepage": "https://github.com/gtajesgenga/cornerstoneTools",
   "license": "MIT",
   "module": "src/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cornerstonejs/cornerstoneTools.git"
+    "url": "git+https://github.com/gtajesgenga/cornerstoneTools.git"
   },
   "scripts": {
     "eslint": "eslint -c .eslintrc.js src",
