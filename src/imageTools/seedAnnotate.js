@@ -9,7 +9,7 @@ import toolColors from '../stateManagement/toolColors.js';
 import anyHandlesOutsideImage from '../manipulators/anyHandlesOutsideImage.js';
 import moveHandle from '../manipulators/moveHandle.js';
 import drawHandles from '../manipulators/drawHandles.js';
-import drawCircle from '../util/drawCircle.js';
+import drawCircleFill from '../util/drawCircleFill.js';
 import isMouseButtonEnabled from '../util/isMouseButtonEnabled.js';
 import pointInsideBoundingBox from '../util/pointInsideBoundingBox.js';
 import { addToolState, removeToolState, getToolState } from '../stateManagement/toolState.js';
@@ -34,7 +34,8 @@ const configuration = {
   currentLetter: 'A',
   currentNumber: 0,
   showCoordinates: true,
-  countUp: true
+  countUp: true,
+  radius: 6
 };
 // / --- Mouse Tool --- ///
 
@@ -160,7 +161,7 @@ function onImageRendered (e, eventData) {
     const handleCanvas = cornerstone.pixelToCanvas(eventData.element, data.handles.end);
 
     // Draw the circle always at the end of the handle
-    drawCircle(context, handleCanvas, color, lineWidth);
+    drawCircleFill(context, handleCanvas, color, color, config.radius, lineWidth);
 
     const handleOptions = {
       drawHandlesIfActive: (config && config.drawHandlesOnHover)
