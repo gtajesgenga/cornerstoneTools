@@ -118,6 +118,7 @@
 
 <!-- include the cornerstone tools library -->
 <script src="../../dist/cornerstoneTools.js"></script>
+<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/cornerstone-tools">\x3C/script>')</script>
 
 <!-- include special code for these examples which provides images -->
 <script src="../exampleImageLoader.js"></script>
@@ -180,7 +181,7 @@
       });
     });
 
-    window.addEventListener("resize orientationchange", function () {
+    var onResize = function () {
         if (document.fullscreenElement || document.mozFullScreenElement ||
             document.webkitFullscreenElement || document.msFullscreenElement) {
             container.offsetWidth = window.outerWidth;
@@ -189,7 +190,9 @@
             element.offsetHeight = container.offsetHeight;
             cornerstone.resize(element, true);
         }
-    });
+    };
+    window.addEventListener("resize", onResize);
+    window.addEventListener("orientationchange", onResize);
 
     // image enable the dicomImage element
     cornerstone.enable(element);

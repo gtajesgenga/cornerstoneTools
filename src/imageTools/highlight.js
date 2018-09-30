@@ -63,6 +63,10 @@ function pointInsideRect (element, data, coords) {
 }
 
 function pointNearTool (element, data, coords) {
+  if (data.visible === false) {
+    return false;
+  }
+
   const cornerstone = external.cornerstone;
   const startCanvas = cornerstone.pixelToCanvas(element, data.handles.start);
   const endCanvas = cornerstone.pixelToCanvas(element, data.handles.end);
@@ -104,6 +108,10 @@ function onImageRendered (e) {
   context.save();
 
   const data = toolData.data[0];
+
+  if (data.visible === false) {
+    return;
+  }
 
   if (!data) {
     return;

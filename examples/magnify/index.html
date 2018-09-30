@@ -5,13 +5,13 @@
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- twitter bootstrap CSS stylesheet - not required by cornerstoneTools -->
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="../cornerstone.min.css" rel="stylesheet">
 
     <style>
 
-        /* These are some good CSS settings for a circular magnifying glass 
+        /* These are some good CSS settings for a circular magnifying glass
            Try removing the border-radius to make a square magnifying glass */
         .magnifyTool{
             border: 4px white solid;
@@ -19,6 +19,7 @@
             border-radius: 50%;
             display: none;
             cursor: none;
+            z-index: 100;
         }
         /* prevents selection when left click dragging */
         .disable-selection {
@@ -49,7 +50,7 @@
                 <a id="disable" class="list-group-item">Disable</a>
             </ul>
             <label for="magLevelRange">Magnification Level</label>
-            <input id="magLevelRange" type="range" min="1" value="2" max="10" />
+            <input id="magLevelRange" type="range" min="1" value="5" max="10" />
             <br/>
             <label for="magSizeRange">Magnifying glass size</label>
             <input id="magSizeRange" type="range" min="100" value="225" max="300" step="25"/>
@@ -81,6 +82,7 @@
 
 <!-- include the cornerstone tools library -->
 <script src="../../dist/cornerstoneTools.js"></script>
+<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/cornerstone-tools">\x3C/script>')</script>
 
 <!-- include special code for these examples which provides images -->
 <script src="../exampleImageLoader.js"></script>

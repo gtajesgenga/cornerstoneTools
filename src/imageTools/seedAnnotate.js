@@ -106,6 +106,10 @@ function createNewMeasurement (mouseEventData) {
 // /////// END ACTIVE TOOL ///////
 
 function pointNearTool (element, data, coords) {
+  if (data.visible === false) {
+    return false;
+  }
+
   if (!data.handles.end) {
     return;
   }
@@ -153,6 +157,10 @@ function onImageRendered (e) {
     }
 
     const data = toolData.data[i];
+
+    if (data.visible === false) {
+      continue;
+    }
 
     if (data.active) {
       color = toolColors.getActiveColor();
